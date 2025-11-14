@@ -29,9 +29,10 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-USER_APPS = [
-    'models'
-]
+# USER_APPS = [
+#     'models',
+#     # 'models.apps.ModelsConfig',
+# ]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -40,9 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'models.apps.ModelsConfig',
 ]
 
-INSTALLED_APPS += INSTALLED_APPS + USER_APPS
+INSTALLED_APPS = INSTALLED_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -126,3 +128,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'models.User' 
